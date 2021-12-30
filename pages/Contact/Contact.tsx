@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Layout from "./layout/Layout";
+import Layout from "../layout/Layout";
 import style from "/styles/contact/contact.module.scss"
 
 
