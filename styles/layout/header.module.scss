@@ -1,0 +1,343 @@
+@use "variable" as visual;
+
+// -------------------------------
+// layoutベース設定
+// -------------------------------
+
+.layout {
+
+  .cls1 {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 4px;
+    fill-rule: evenodd;
+  }
+    
+  & > div:first-child {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    transition: all .4s ease-in-out;
+
+      @include visual.mq(pc) {
+        transform: translate(-50%, 0);
+      }
+      @include visual.mq(sp) {
+        transform: translate(-80%, 10%);
+      }
+  }
+
+  & > div:last-child {
+    position: fixed;
+    top: 0;
+    left: calc(100% - 376px);
+    z-index: 9999;
+    display: block;
+    transform: translate(0);
+    transition: all ease-in-out .4s;
+
+    @include visual.mq(pc) {
+      transform: translate(50%, 0);
+    }
+    @include visual.mq(sp) {
+      transform: translate(80%, 0);
+    }
+  }
+
+  
+}
+
+
+// -------------------------------
+// headerベース設定
+// -------------------------------
+
+.header {
+  clear: both;
+  background-color: visual.$header-color;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  // ---------- headerで白横棒 ----------
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+
+    // ---------- sp設定 ----------
+    @include visual.mq(sp) {
+      height: 100px;
+    }
+    // ---------- sp設定end ---------- 
+  }
+
+  // ---------- headerに半円 ----------
+  &::after {
+    content: "";
+    display: block;
+    width: 900px;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: -100px;
+    left: calc(50% - 450px);
+    z-index: 12;
+
+    // ---------- sp設定 ----------
+    @include visual.mq(sp) {
+      display: none;
+    }
+    // ---------- sp設定end ---------- 
+  }
+}
+
+
+// -------------------------------
+// header > div設定
+// -------------------------------
+
+.header {
+  & > div {
+    width: 400px;
+    margin: 35px auto 0 auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 100;
+
+    // ---------- sp設定 ----------
+    @include visual.mq(sp){
+      width: 100%;
+    }
+    // ---------- sp設定end ----------
+  }
+}
+
+
+// -------------------------------
+// logo設定
+// -------------------------------
+
+.header{
+  h1 {
+    float: left;
+    position: fixed;
+    z-index: 9999;
+
+    // ---------- sp設定 ----------
+    @include visual.mq(sp) {
+      left: calc(50% - 70px);
+    }
+    // ---------- sp設定end ----------
+  }
+}
+
+// ---------- リンク設定 ----------
+a {
+  .logo {
+    fill: visual.$logo;
+  }
+  &:hover > .logo {
+    fill: nth(visual.$link-color, 2);
+  }
+}
+
+
+// -------------------------------
+// .header > div > div設定
+// -------------------------------
+
+.header {
+  div {
+    & > div {
+      width:  calc(100% - 70px);
+      float: right;
+
+      // ---------- sp設定 ----------
+      @include visual.mq(sp) {
+        width: 100%;
+        float: none;
+      }
+      // ---------- sp設定end ----------
+    }
+  } 
+}
+
+
+// -------------------------------
+// toggle設定
+// -------------------------------
+
+.header {
+  #menu {
+    float: right;
+    position: fixed;
+    right: calc((50% - 100px) + 5px);
+    z-index: 9999;
+    display: none;
+
+    &::before {
+      content: "Menu";
+      font-family: caveat;
+      font-size: 18px;
+      color: nth(visual.$link-color, 2);
+      width: 100px;
+      text-align: center;
+      padding: 11px 0;
+      background-color: #ffffff;
+      border: 1px solid nth(visual.$link-color, 2);
+      border-radius: 8px;
+      position: absolute;
+      top: 0;
+      right: -5px;
+      z-index: 201;
+    }
+
+    &:checked::before {
+      content: "Close";
+      color: #ffffff;
+      background-color: nth(visual.$link-color, 2);
+    }
+    
+    // ---------- sp設定 ----------
+    @include visual.mq(sp) {
+      display: inline;
+    }
+    // ---------- sp設定end ----------
+  }
+}
+
+
+// -------------------------------
+// toggleチェック後nav設定
+// -------------------------------
+
+.header {
+  #menu {
+    
+    &:checked ~ nav {
+      transform: translate(0, 0);
+
+      li {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+// -------------------------------
+// nav設定
+// -------------------------------
+
+// ---------- ナビゲーションの下敷き設定 ----------
+.nav {
+  clear: both;
+  position: fixed;
+  z-index: 9998;
+  
+  // ---------- sp設定 ----------
+  @include visual.mq(sp) {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-top: 100px;
+    transform: translate(0, -100vh);
+    transition: transform .6s ease-in-out ;
+  }
+  // ---------- sp設定end ----------
+}
+
+// ---------- ナビ並び方設定 ----------
+.nav {
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    // ---------- sp設定 ----------
+    @include visual.mq(sp) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform .6s ease-in-out ;
+
+      li{
+        opacity: 0;
+        &:nth-child(1) {
+          transition: opacity 0.8s ease 0.5s;
+        }
+        &:nth-child(2) {
+          transition: opacity 0.8s ease 0.8s;
+        }
+        &:nth-child(3) {
+          transition: opacity 0.8s ease 1.1s;
+        }
+      }
+    }
+    // ---------- sp設定end ----------
+  }
+}
+
+// ---------- リンク設定 ----------
+.nav {
+  a {
+    @extend %caveat !optional;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: nth(visual.$link-color, 1);
+    padding: 20px;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+
+    // ---------- sp設定 ----------
+    @include visual.mq(sp) {
+      width: 100%;
+      padding: 50px;
+    }
+    // ---------- sp設定end ----------
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: nth(visual.$link-color, 1);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: scale(0, 0);
+      transition: all .4s ease-in-out;
+
+      // ---------- sp設定 ----------
+      @include visual.mq(sp) {
+        background-color: nth(visual.$link-color, 2);
+        transform: scale(1, 1);
+      }
+      // ---------- sp設定end ----------
+    }
+
+    &:hover {
+      color: nth(visual.$link-color, 2);
+    }
+    &:hover::before {
+      background-color: nth(visual.$link-color, 2);
+      transform: scale(1, 1);
+    }
+  }
+}
+
+
