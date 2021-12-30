@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import style from 'index.module.scss'
-import Section from "../component/section";
+import style from "/styles/index.module.scss"
+import Section from "../component/Section";
 import Lightbox from "react-image-lightbox";
 import 'react-image-lightbox/style.css'
 

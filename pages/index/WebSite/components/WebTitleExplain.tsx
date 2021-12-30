@@ -1,6 +1,6 @@
 import { NextPage } from "next"
 import { ReactNode } from "react"
-import style from "index.module.scss"
+import style from "/styles/index.module.scss"
 
 
 

@@ -2,7 +2,7 @@
 // Footerコンポーネント設定
 // -------------------------------
 import { NextPage } from "next";
-import style from 'layout/footer.module.scss';
+import style from '/styles/layout/footer.module.scss';
 
 
 const Footer: NextPage = () => {

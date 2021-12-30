@@ -3,7 +3,7 @@
 // -------------------------------
 import { NextPage } from "next";
 import { ReactNode } from "react";
-import style from 'layout/main.module.scss'
+import style from '/styles/layout/main.module.scss'
 
 
 type props = {

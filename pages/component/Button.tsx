@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import style from "components.module.scss"
+import style from "/styles/components.module.scss";
 
 
 

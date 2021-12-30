@@ -5,7 +5,7 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import style from 'layout/header.module.scss'
+import style from '/styles/layout/header.module.scss'
 
 
 type Props = {

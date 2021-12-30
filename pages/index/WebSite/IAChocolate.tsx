@@ -3,7 +3,7 @@ import Link from "next/link"
 import WebImage from "./components/WebImage"
 import WebExplain from "./components/WebExplain"
 import Button from "../../component/Button"
-import style from "index.module.scss"
+import style from "/styles/index.module.scss"
 
 
 

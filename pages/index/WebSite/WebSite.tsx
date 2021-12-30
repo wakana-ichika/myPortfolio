@@ -1,10 +1,10 @@
-import Section from "../../component/section";
+import Section from "../../component/Section";
 import { NextPage } from "next";
 import { useEffect, useState, ReactNode, SyntheticEvent } from "react";
 import Shuffle from "shufflejs";
 import IACafe from "./IACafe";
 import IAChocolate from "./IAChocolate"
-import style from "index.module.scss"
+import style from "/styles/index.module.scss"
 
 
 

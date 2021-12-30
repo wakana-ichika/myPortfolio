@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import Layout from "../../layout/layout";
-import PageTitle from "../../component/pagetitle";
+import Layout from "../../layout/Layout";
+import PageTitle from "../../component/PageTitle";
 import WebImage from "./components/WebImage";
 import WebTitleExplain from "./components/WebTitleExplain";
 import WebExplain from "./components/WebExplain";
-import style from "index.module.scss"
+import style from "/styles/index.module.scss"
 
 
 

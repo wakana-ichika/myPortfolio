@@ -2,7 +2,7 @@
 // ページ上のタイトル設定
 // -------------------------------
 import { NextPage } from "next";
-import style from 'components.module.scss';
+import style from '/styles/components.module.scss';
 
 
 type props = {

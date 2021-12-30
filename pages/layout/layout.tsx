@@ -3,9 +3,9 @@
 // -------------------------------
 import { NextPage } from "next"
 import { ReactNode } from "react"
-import Header from "./header"
+import Header from "./Header"
 import Main from "./Main"
-import Footer from "./footer"
+import Footer from "./Footer"
 
 
 type props = {
