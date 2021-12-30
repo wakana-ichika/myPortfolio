@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Section from "../../component/Section";
-import style from "myself/careerLicense.module.scss"
+import style from "/styles/myself/careerLicense.module.scss"
 
 const CareerLicense: NextPage = () => {
   return (

@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import Layout from "../layout/Layout";
-import Kana from "./kana";
-import Skill from "./skill";
-import CareerLicense from "./careerLicense";
+import Kana from "./Kana";
+import Skill from "./Skill";
+import CareerLicense from "./CareerLicense";
 
 
 

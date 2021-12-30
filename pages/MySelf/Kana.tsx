@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import style from "myself/kana.module.scss";
+import style from "/styles/myself/kana.module.scss";
 
 
 
