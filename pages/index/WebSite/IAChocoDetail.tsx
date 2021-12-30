@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Layout from "../../layout/Layout";
-import PageTitle from "../../component/PageTitle";
+import PageTitle from "../../../component/PageTitle";
 import WebImage from "./components/WebImage";
 import WebTitleExplain from "./components/WebTitleExplain";
 import WebExplain from "./components/WebExplain";
