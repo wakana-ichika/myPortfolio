@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { useEffect } from "react";
-import Section from "../component/Section";
+import Section from "/styles/component/Section";
 import style from 'myself/skill.module.scss'
 
 
